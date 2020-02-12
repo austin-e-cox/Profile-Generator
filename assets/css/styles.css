@@ -1,0 +1,50 @@
+body{
+    background-color: blue;
+}
+
+img {
+    background-color: pink;
+    padding: 10px;
+    border-radius: 32%;
+}
+
+.myImg{
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+.primary-data{
+    background-color: aqua;
+    margin: 10px;
+    width: 500px;
+    margin: auto;
+}
+
+.bio{
+    background-color: red;
+    width: 500px;
+    margin: auto;
+}
+
+.secondary-data{
+    background-color: aqua;
+    margin: 10px;
+    width: 500px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;;
+}
+
+.infoBox{
+    background-color: brown;
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+    margin: 25px;
+}

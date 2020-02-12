@@ -68,7 +68,8 @@ async function main(){
         num_stars: ghd.num_stars
     }
     console.log(minimalGithubData);//minimalGithubData);
-
+    //mapsSearchLoc = minimalGithubData.loc.replace(" ","+")
+    //https://www.google.com/maps/place/Seattle,+WA,+USA/
 }
 
 main()
