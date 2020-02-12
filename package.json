@@ -20,6 +20,8 @@
     "fs": "latest",
     "axios": "latest",
     "inquirer": "latest",
-    "html-pdf": "latest"
+    "html-pdf": "latest",
+    "jsdom": "latest",
+    "jquery": "latest"
   }
 }
