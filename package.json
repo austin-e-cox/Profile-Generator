@@ -1,0 +1,25 @@
+{
+  "name": "profile-generator",
+  "version": "1.0.0",
+  "description": "given CLI inputs into node, generate a pdf of user data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austin-e-cox/Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austin-e-cox/Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/austin-e-cox/Profile-Generator#readme",
+  "dependencies": {
+    "fs": "latest",
+    "axios": "latest",
+    "inquirer": "latest",
+    "html-pdf": "latest"
+  }
+}
