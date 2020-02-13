@@ -6,17 +6,18 @@ const jsdom = require("jsdom");
 const { JSDOM }  = jsdom;
 
 const linkIds = new Set(["loc","prof","blog"]);
+const imgId = new Set(["prof_img"]);
 
 const questions = [
     {
         type: 'input',
-        message: 'What is your favorit color?',
-        name: 'color'
+        message: 'Enter a GitHub user name.',
+        name: 'userName'
     },
     {
         type: 'input',
-        message: 'Enter a GitHub user name.',
-        name: 'userName'
+        message: 'What is your favorite color?',
+        name: 'color'
     }
 ];
 
@@ -69,6 +70,8 @@ function editHtmlDoc(filePath,replaceData){
             if (key !== "color"){
                 if (linkIds.has(key))
                     $(`#${key}`).attr("href",value);
+                else if (imgId.has(key))
+                    $(`#${key}`).attr("src",value);
                 else
                     $(`#${key}`).text(value);
                 //console.log(`#${key}`)
@@ -85,15 +88,26 @@ function editHtmlDoc(filePath,replaceData){
 
         // write new file
         //console.log( document.doctype.innerHTML + document.head.innerHTML + document.body.innerHTML);
-        var output = `<!DOCTYPE html>\n<html lang="en">\n<head>${document.head.innerHTML}</head>\n<body style="background-color: ${bgColor}">${document.body.innerHTML}</body>`;
+        var output = `<!DOCTYPE html>\n<html lang="en">\n<head>${document.head.innerHTML}</head>\n<body style="background-color: ${bgColor}">${document.body.innerHTML}</body></html>`;
 
         fs.writeFile(outFilePath, output, function(err) {
             if (err) throw err;
-            console.log(`Saved new html as `);
+            console.log(`Saved new html as ${outFilePath}`);
         });
     });
 }
 
+function generatePdf(user){
+    var html = fs.readFileSync('./index2.html', 'utf8');
+    var options = { format: 'Letter',
+                    renderDelay: 2000,
+                    base: "file:///C:/Users/austi/OneDrive/Desktop/School/Homeworks/Homework%208/Profile-Generator/" };
+    
+    pdf.create(html, options).toFile(`./profile-${user}.pdf`, function(err, res) {
+    if (err) return console.log(err);
+       console.log(`pdf generated as: ${res.filename}`); // { filename: '/app/businesscard.pdf' }
+    });
+}
 
 async function main(){
     let inputs = await getInputs();
@@ -126,7 +140,8 @@ async function main(){
     const myData = {...minimalGithubData, color: bgColor}
     // log data in file
     fs.writeFileSync("data.txt",JSON.stringify(myData,null,2));
-    editHtmlDoc("index.html",myData)
+    editHtmlDoc("index.html",myData);
+    generatePdf(myData.user);
 }
 
 main()

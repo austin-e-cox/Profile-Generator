@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Generator</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
     <script src="http://code.jquery.com/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body id="color">
     <div class="myImg">
         <img src="./assets/img/profImg.jfif" alt="profile image" width="200px" id="prof_img">
     </div>
     <div class="primary-data">
+        <div class="primary-spacer"></div>
         <div class="center">
-            <h2 id="user">Austin Cox</h2>
+            <h1 id="user">Austin Cox</h1>
         </div>
         <div class="links center">
-            <a href="https://www.google.com/maps/place/Seattle,+WA,+USA" id="loc">Location</a>
-            <a href="https://github.com/austin-e-cox" id="prof">Profile</a>
-            <a href="https://austin-e-cox.github.io/Portfolio_Bootstrap/" id="blog">Blog</a>
+            <a href="https://www.google.com/maps/place/Seattle,+WA,+USA" id="loc" class="link">Location</a>
+            <a href="https://github.com/austin-e-cox" id="prof" class="link">Profile</a>
+            <a href="https://austin-e-cox.github.io/Portfolio_Bootstrap/" id="blog" class="link">Blog</a>
         </div>
     </div>
     
@@ -32,24 +34,25 @@ quite good with Abaqus-related APIs (engineering simulation)</h5>
 
     <div class="secondary-data">
         <div class="row">
-            <div class="center infoBox">
+            <div class="center infoBox column">
                 <h3>Public Repositories</h3>
-                <h5 id="num_pub_repos">14</h5>
+                <h4 id="num_pub_repos">14</h4>
             </div>
-            <div class="center infoBox">
+            <div class="center infoBox column">
                 <h3>Followers</h3>
-                <h5 id="num_followers">7</h5>
+                <h4 id="num_followers">7</h4>
             </div>    
         </div>
         <div class="row">
-            <div class="center infoBox">
+            <div class="center infoBox column">
                 <h3>Following</h3>
-                <h5 id="num_following">4</h5>
+                <h4 id="num_following">4</h4>
             </div>
-            <div class="center infoBox">
+            <div class="center infoBox column">
                 <h3>GitHub Stars</h3>
-                <h5 id="num_stars">1</h5>
+                <h4 id="num_stars">1</h4>
             </div>
         </div>
     </div>
 </body>
+</html>
